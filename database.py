@@ -27,6 +27,10 @@ def get_sales():
     sales_data = cur.fetchall()
     return sales_data
 
+def get_sales():
+    cur.execute("select * from sales")
+    sales_data = cur.fetchall()
+    return sales_data
 
 def get_data(table):
     cur.execute(f"select * from {table}")
@@ -65,6 +69,7 @@ def get_sales():
     cur.execute("select * from sales")
     sales_data = cur.fetchall()
     return sales_data
+
 
 def insert_stock(values):
     cur.execute(f"insert into stock(pid,stock_quantity)values{values}")
