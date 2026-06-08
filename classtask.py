@@ -9,7 +9,7 @@ class BankAccount:
          print(f"{self.owner_name} deposited {value}")
 
    def check_balance(self,balance):
-         print(f"Your balance is{self.balance} ")
+         print(f"Your balance is{balance} ")
 
    def withdraw(self,amount):
          if {self.balance}>amount:
