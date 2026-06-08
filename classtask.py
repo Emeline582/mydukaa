@@ -13,10 +13,10 @@ class BankAccount:
 
    def withdraw(self,amount):
          if {self.balance}>amount:
-            response = "Your withdrawal was successful"
+            print( "Your withdrawal was successful")
          else :
-            response = "balance is insufficient"
-         return response
+            print("balance is insufficient")
+         
 
       
    def get_details(self):
@@ -30,8 +30,9 @@ class BankAccount:
 #object1
 customer1 = BankAccount(1788800,50000,'Juma',12/6/2020)
 customer1.deposit(20000)
+customer1.check_balance(70000)
 customer1.withdraw(10000)
-customer1.check_balance()
+
 customer1.display_info()
 customer1.close_account()
 customer1.get_details()
