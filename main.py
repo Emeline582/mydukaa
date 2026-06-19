@@ -131,7 +131,6 @@ def register():
     return render_template('register.html')
 
 
-
 @app.route('/dashboard')
 @login_required
 def dashboard():
@@ -139,19 +138,25 @@ def dashboard():
     product_profit = profit_per_product()
 
     daily_sales = sales_per_day()
-    daily_profit = profit_per_day
-#product data
-    product_names = [i[0] for i in product_sales]
-    prod_profit  = [float(i[1]) for i in product_profit]
-    product_sales = [float(i[1]) for i in product_sales]
-#days data
-    dates = [str(i[0]) for i in daily_sales]
-    day_sales = [float(i[1]) for i in daily_sales]
-    daily_profit = [float(i[1]) for i in daily_profit]
+    daily_profit = profit_per_day()
 
-    return  render_template("dashboard.html")
-    product_names  = product_names,prod_profit = prod_profit, product_sales = product_sales
-    dates =dates, day_sales =day_sales,day_profit = day_profit
+    #product data
+    product_names = [ i[0] for i in product_sales ]
+    prod_profit = [ float(i[1]) for i in product_profit  ]
+    prod_sales = [ float(i[1]) for i in product_sales ]
+
+
+    #days data 
+    dates = [ str(i[0]) for i in daily_sales ]
+    day_sales = [ float(i[1]) for i in daily_sales ]
+    day_profit = [ float(i[1]) for i in daily_profit ]
+
+    return render_template('dashboard.html',
+            product_names = product_names,prod_profit = prod_profit , prod_sales = prod_sales,
+            dates = dates , day_sales = day_sales, day_profit = day_profit 
+                           )
+
+
 
 @app.route('/login',methods=['GET','POST'])
 def login():

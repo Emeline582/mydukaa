@@ -17,9 +17,10 @@
     <script src="https://cdn.datatables.net/2.3.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.3.8/js/dataTables.bootstrap5.js"></script>
 
+    <!-- chart js cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
     <title> {% block title %} {% endblock %}</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -56,25 +57,26 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/logout">Logout</a>
                             </li>
-                            {% else %}
+                             {% else %}
                             <li class="nav-item">
-                                
                                 <a class="nav-link" href="/register">Register</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/login">Login</a>
                             </li>
                             {% endif %}
-                            
+
                         </ul>
-                        
+
                     </div>
                 </div>
             </nav>
         </div>
 
 
-         <div>
+
+
+        <div>
             {% with messages = get_flashed_messages(with_categories=true) %}
              {% if messages %}
                {% for category, message in messages %}
@@ -88,6 +90,8 @@
         </div>
 
 
+
+
         {% block content %}
 
 
@@ -99,7 +103,7 @@
 
 
 
-        <div style="margin-top: 600px; ">
+        <div style="margin-top: 600px; color: red;">
             <p>FOOTER</p>
         </div>
 
