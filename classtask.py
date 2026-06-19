@@ -5,14 +5,16 @@ class BankAccount:
       self.owner_name = owner_name
       self.open_date = open_date
 
-   def deposit(self,value):
-         print(f"{self.owner_name} deposited {value}")
+   def deposit(self,amount):
+         self.balance += amount
+         print(f"{self.owner_name} deposited {amount}")
 
    def check_balance(self,balance):
          print(f"Your balance is{balance} ")
 
    def withdraw(self,amount):
-         if {self.balance}>amount:
+         if self.balance >=amount:
+            self.balance -= amount 
             print( "Your withdrawal was successful")
          else :
             print("balance is insufficient")
@@ -24,15 +26,16 @@ class BankAccount:
          print(f"Account_no:{self.account_no},balance:{self.balance},Name:{self.owner_name}, open_date:{self.open_date}")
          print("_______________________________")
       
-   def close_account(self,value):
-         print("closed_account ")
+def close_account(self):
+        self.closed = True
+        print(f"Account {self.account_number} has been closed.")
+
+
          
 #object1
 customer1 = BankAccount(1788800,50000,'Juma',12/6/2020)
 customer1.deposit(20000)
 customer1.check_balance(70000)
 customer1.withdraw(10000)
-
-customer1.display_info()
-customer1.close_account()
 customer1.get_details()
+customer1.close_account()
